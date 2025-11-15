@@ -42,3 +42,7 @@ if(MSVC AND BUILD_SHARED_LIBS)
     INTERFACE "LV_ATTRIBUTE_EXTERN_DATA=__declspec(dllimport)"
     PRIVATE "LV_ATTRIBUTE_EXTERN_DATA=__declspec(dllexport)")
 endif()
+
+add_subdirectory(freetype-2.13.3)
+include_directories(freetype-2/include)
+target_link_libraries(lvgl PUBLIC freetype)
